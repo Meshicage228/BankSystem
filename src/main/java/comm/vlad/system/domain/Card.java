@@ -12,4 +12,5 @@ public class Card {
     private int verNumber;
     private int money;
     private Banks banks;
+
 }
