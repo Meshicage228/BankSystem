@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        /*Client client1 = new Client("Vlad", "Zherko", List.of(
+        Client client1 = new Client("Vlad", "Zherko", List.of(
                 new Card("777777777", 1200, Banks.ALPHABANK),
                 new Card("123123123", 155, Banks.IDEABANK),
                 new Card("521546624", 674, Banks.ALPHABANK)
@@ -20,8 +20,9 @@ public class Main {
                 new Card("505709335", 654, Banks.SBERBANK)
         ));
         CashMachine cashMachine = new CashMachine(client2);
-        cashMachine.saveInfo();*/
+        cashMachine.machineLogic();
+        cashMachine.showHistory();
 
-        System.out.println(Banks.getIdBank(Banks.ALPHABANK));
+
     }
 }
