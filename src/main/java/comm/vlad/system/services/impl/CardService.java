@@ -9,5 +9,6 @@ public interface CardService {
     List<Card> getAll();
     void addMoney();
     void reduceMoney();
+    void save(Card card);
 
 }

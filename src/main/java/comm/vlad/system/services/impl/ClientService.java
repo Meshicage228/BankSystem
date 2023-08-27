@@ -5,6 +5,7 @@ import comm.vlad.system.domain.Client;
 import java.util.List;
 
 public interface ClientService {
-    List<Client> getHistory();
+    List<Client> getAll();
+    void save(Client client);
 
 }
