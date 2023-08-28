@@ -1,8 +1,6 @@
-package comm.vlad.system.services.impl;
+package comm.vlad.system.services;
 
 import comm.vlad.system.configs.DataBaseConnectivity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 
 import java.sql.ResultSet;
