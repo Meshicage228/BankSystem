@@ -1,10 +1,8 @@
-import comm.vlad.system.configs.DataBaseConnectivity;
 import comm.vlad.system.domain.Card;
 import comm.vlad.system.domain.CashMachine;
 import comm.vlad.system.domain.Client;
-import comm.vlad.system.services.impl.Banks;
+import comm.vlad.system.services.Banks;
 
-import java.sql.Statement;
 import java.util.List;
 
 public class Main {

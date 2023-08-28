@@ -1,7 +1,8 @@
 package comm.vlad.system.domain;
 
 import comm.vlad.system.configs.DataBaseConnectivity;
-import lombok.AllArgsConstructor;
+import comm.vlad.system.services.CardService;
+import comm.vlad.system.services.ClientService;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -13,19 +14,21 @@ import java.util.Scanner;
 import java.util.StringJoiner;
 
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor()
 public class CashMachine {
-    /*private int allCash = 12_000;*/
+    private int allCash = 12_000;
+    @NonNull
     private Client client;
+    private int IDcard;
 
     private void saveInfo(){
         System.out.println("Choose card :");
         for (int i = 0; i < client.getCards().size(); i++) {
             System.out.println(i + " " + client.getCards().get(i).getBanks());
         }
-        int idCard = new Scanner(System.in).nextInt();
-        Client.save(client);
-        Card.save(client, client.getCards().get(idCard));
+        IDcard = new Scanner(System.in).nextInt();
+        ClientService.save(client);
+        CardService.save(client, client.getCards().get(IDcard));
     }
     private int menu(){
         saveInfo();
@@ -41,7 +44,7 @@ public class CashMachine {
     public void machineLogic(){
         switch (menu()){
             case 1 -> {
-
+                System.out.println(CardService.sumOnCard(client.getCards().get(IDcard)));
             }
             case 2 -> {
 
@@ -50,7 +53,7 @@ public class CashMachine {
 
             }
             case 4 -> {
-
+                showHistory();
             }
             default -> {
                 System.out.println("Wrong operator");
